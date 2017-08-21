@@ -50,3 +50,7 @@ ADD package.json /app
 
 # to install all the dependencies
 RUN npm install && npm cache clean
+
+# Download and install mongoDB
+docker pull mongo
+docker run -v "$(pwd)":/data --name mongo -d mongo mongod --smallfiles

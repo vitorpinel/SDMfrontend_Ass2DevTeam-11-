@@ -1,6 +1,7 @@
 var express = require("express")
 var router = express.Router();
 
+
 import {getIndex} from "../handlers/indexHandler"
 
 // fires before entring the router continuation block

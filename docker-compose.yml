@@ -11,6 +11,14 @@ services:
       - /app/node_modules
     ports:
       - 3000:3000
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    volumes:
+      - ./db:/data/db
+    ports:
+      - "27017:27017"
   app:
     image: app-web
     command: npm run dev
