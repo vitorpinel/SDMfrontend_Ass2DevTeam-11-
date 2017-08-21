@@ -16,7 +16,7 @@ services:
   mongo:
     image: mongo
     volumes:
-      - /Users/vitorpinel/Documents/SDM2017/SDMFrontEnd/db:/data/db
+      - ./db:/data/db
     ports:
       - "27017:27017"
   app:
