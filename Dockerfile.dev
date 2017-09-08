@@ -5,6 +5,9 @@ FROM ubuntu:14.04
 # replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
+# Download and install mongoDB
+docker pull mongo
+
 # update the repository sources list
 # and install dependencies
 RUN apt-get update \
@@ -50,7 +53,3 @@ ADD package.json /app
 
 # to install all the dependencies
 RUN npm install && npm cache clean
-
-# Download and install mongoDB
-docker pull mongo
-docker run -v "$(pwd)":/data --name mongo -d mongo mongod --smallfiles

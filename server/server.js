@@ -24,11 +24,16 @@ require("babel-core/register")({
 
 const express = require("express")
 const app = express();
+const mongoose = require("mongoose");
 const compression = require("compression") // use for content encoding gzip
 const path = require('path')
+
+mongoose.connect("mongodb://mongo:27017/SERLER");
+const db = mongoose.conections;
+
     // Route handlers go there
 var index = require("./routes/index")
-
+User = require("../src/components/models/users")
 
 app.use(compression()) // compresses the content in gzip 
 app.use(express.static(__dirname + "/../dist"))
@@ -48,6 +53,15 @@ app.set('view engine', 'ejs') // view engine to enable embedded javascript
 
 // routes namespaces
 app.use("/", index);
+
+app.get('/users',function(req,res){
+    User.getUsers(function(err, user){
+        if(err){
+            throw err;
+        }
+        res.json(users);
+    });
+});
 
 
 app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {

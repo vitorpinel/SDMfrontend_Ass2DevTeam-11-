@@ -1,0 +1,51 @@
+# create Database
+use SERLER
+
+# create Collections
+db.createCollection('Users')
+db.createCollection('EvidenceSource')
+db.createCollection('Article')
+
+
+# create first user
+db.Users.insert(
+	{
+		UserLogin: "VitorPinel",
+		Password:"1234",
+		Name:"Vitor Hugo Coreeia Lima Pinel",
+		Email:"vitor.pinel@gmail.com",
+		Affiliation: "AUT",
+		Role: "moderator",
+		Gender:"Male",
+		age:"39"
+	
+	}
+)
+
+# create first Article
+db.EvidenceSource.insert(
+	{
+		Author: "Runeson, Per and Höst, Martin",
+		Title: "Guidelines for conducting and reporting case study research in software engineering",
+		Journal: "Empirical Software Engineering",
+		Year: "2008",
+		Volume: "14",
+		Number: "2",
+		Pages: "131--164",
+		Month: "dec"
+	
+	}
+)
+
+# create first Evidence Source
+db.EvidenceSource.insert(
+	{
+		Article: ArticleID,
+		CredibilityRating: "0" ,
+		ResearchDesign:  ,
+		EvidenceItem:  ,
+		Method:  ,
+		Methodology:  
+	
+	}
+)
