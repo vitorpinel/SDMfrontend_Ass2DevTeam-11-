@@ -74,7 +74,7 @@ var UserSchema = mongoose.Schema({
 //     });
 // };
 //
-var Users = module.exports = mongoose.model(Users, UserSchema);
+var Users = module.exports = mongoose.model("Users", UserSchema);
 module.exports.getUsers = function(callback, limit){
 	Users.find(callback).limit(limit);
 }

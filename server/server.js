@@ -28,6 +28,7 @@ const mongoose = require("mongoose");
 const compression = require("compression") // use for content encoding gzip
 const path = require('path')
 
+
 mongoose.connect("mongodb://mongo:27017/SERLER");
 const db = mongoose.conections;
 
@@ -55,7 +56,7 @@ app.set('view engine', 'ejs') // view engine to enable embedded javascript
 app.use("/", index);
 
 app.get('/users',function(req,res){
-    User.getUsers(function(err, user){
+    User.getUsers(function(err, users){
         if(err){
             throw err;
         }
