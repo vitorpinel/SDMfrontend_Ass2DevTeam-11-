@@ -58,6 +58,7 @@
     "redux-promise-middleware": "^4.2.1",
     "mongodb": "2.2.31",
     "mongoose": "4.11.9",
+    "body-parser": "*",
     "redux-thunk": "^2.2.0"
   }
 }

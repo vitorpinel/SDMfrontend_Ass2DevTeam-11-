@@ -18,6 +18,10 @@ class Header extends React.Component{
             {
                 value:"Home",
                 link: "/"
+            },
+            {
+                value:"User",
+                link:"/users"
             }
         ]
         var menuItems = menu.map((item,i) => {
@@ -28,21 +32,16 @@ class Header extends React.Component{
                     </Link>
                 </li>
             )
-        })
+        });
 
         return(
-            <header id="header" className="full-header">
-                <div id="header-wrap">
-                    <div className="container clearfix">
-                        <div id="primary-menu-trigger"><i className="icon-reorder"></i></div>
-                        <nav id="primary-menu" className="style-4">
-                            <ul>
-                                {menuItems}
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </header>
+            <div id="header" className="full-header">
+    
+                <h2>
+                    <blockquote> "Create your profile and enjoy blogging" </blockquote>
+                </h2>
+    
+            </div>
         )
     }
 }

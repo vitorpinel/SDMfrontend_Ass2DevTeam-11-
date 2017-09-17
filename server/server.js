@@ -25,6 +25,7 @@ require("babel-core/register")({
 const express = require("express")
 const app = express();
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const compression = require("compression") // use for content encoding gzip
 const path = require('path')
 
@@ -36,8 +37,11 @@ const db = mongoose.conections;
 var index = require("./routes/index")
 User = require("../src/components/models/users")
 
+app.use(bodyParser.json())//use bodyparser to retain json object on post
 app.use(compression()) // compresses the content in gzip 
 app.use(express.static(__dirname + "/../dist"))
+
+
 
 /**
  * This block is for server to server the correct file in the environment 
