@@ -5,12 +5,25 @@
     <link rel="icon" type="image/svg"
     href="/Users/saviravi/Documents/SDM2017/sdmfrontend/faviconsafari.svg">
 <style>
+
 div.container {
     width: fit-content;
     max-height: fit-content;
-    padding: 12em;
+    padding: 18em;
     border: 5px solid lightgrey;
+    float: left;
+    
 }
+div.content {
+    width: fit-content;
+    max-height: fit-content;
+    padding: 18em;
+    border: 5px solid lightgrey;
+    float: right;
+    
+}
+
+
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -82,28 +95,32 @@ body {margin:0;}
     
 
 <div class="container">
+       <div id="left"></div>
+        <div style="width:50%; float:left"></div>
         
+        </div>
+            
 
-<header>
-  <img src="faviconsafari.svg">
-   <h1>WORK IN PROGRESS...</h1>
-</header>
+            <article>
   
+            <h1><menu type="toolbar"></menu></h1>
 
-      <div style="margin-left:80px;">
-          
-          </div>
-
-
-<article>
-  
-  <h1><menu type="toolbar"></menu></h1>
-
-</article>
+            </article>
 
 
 </div>
-<footer>SERLER</footer>
+<div class="content">
+        <div id="right"></div>
+        <div style="width:50%; float:right"></div>
+        <br style="clear:both;"/>
+    </div>
+
+
+</div>
+<header>
+       
+      </header>
+
 
 </body>
 </html>
